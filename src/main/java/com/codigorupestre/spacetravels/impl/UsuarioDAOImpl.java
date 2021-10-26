@@ -21,8 +21,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 	@Override
 	public boolean insertarUsuario(Usuario usuario) {
-
-		String sql = "INSERT INTO cursojava.Usuario\n" + "(NOMBRE, APELLIDOS, USUARIO, PASSWORD, EMAIL, TELEFONO)\n"
+ 
+		String sql = "INSERT INTO usuarios\n" + "(nombre, apellidos, usuario, pasword, email, telefono)\n"
 				+ "VALUES( ?, ?, ?, ?, ?, ?)";
 
 		Connection connection = dbAdapter.getConnection();
@@ -53,7 +53,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	public Usuario consultarUsuario(String user, String password) {
 		
 		Usuario usuario = new Usuario();
-		String sqlLogin = "select * from Usuario WHERE  usuario = '"+ user +"' AND password = '"+ password +"' ";
+		String sqlLogin = "select * from usuarios WHERE  usuario = '"+ user +"' AND pasword = '"+ password +"' ";
 
 		Connection connection = dbAdapter.getConnection();
 
@@ -68,7 +68,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 				usuario.nombre = rs.getString("nombre");
 				usuario.apellidos = rs.getString("apellidos");
 				usuario.usuario = rs.getString("usuario");
-				usuario.contrasena = rs.getString("password");
+				usuario.contrasena = rs.getString("pasword");
 				usuario.email = rs.getString("email");
 				usuario.telefono = rs.getString("telefono");
 				

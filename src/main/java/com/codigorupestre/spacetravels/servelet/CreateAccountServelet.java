@@ -4,6 +4,7 @@ import java.io.IOException;
 import com.codigorupestre.spacetravels.clases.Usuario;
 import com.codigorupestre.spacetravels.dao.UsuarioDAO;
 import com.codigorupestre.spacetravels.impl.UsuarioDAOImpl;
+import com.codigorupestre.spacetravels.mail.MailSpaceTravels;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -18,6 +19,7 @@ public class CreateAccountServelet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 8375118784034517540L;
+	
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,9 +35,13 @@ public class CreateAccountServelet extends HttpServlet {
 		usuario.usuario = req.getParameter("usuario");
 		usuario.contrasena = req.getParameter("password");
 		usuario.email = req.getParameter("email");
-		usuario.telefono = req.getParameter("telefono");
-
+		usuario.telefono = req.getParameter("telefono"); 
+		
 		System.out.println(usuario);
+		
+		
+		MailSpaceTravels mail = new MailSpaceTravels();
+		mail.sendMail(usuario.email);
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAOImpl();
 		usuarioDAO.insertarUsuario(usuario);

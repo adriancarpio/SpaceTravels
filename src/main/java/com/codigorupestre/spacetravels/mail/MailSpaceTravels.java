@@ -18,8 +18,8 @@ public class MailSpaceTravels {
 		//quien va  a enviar el correo
 		String from = "adriancarpiomoran@gmail.com";
 		
-		String userName = "";
-		String password = "";
+		String userName = "adriancarpiomoran@gmail.com";
+		String password = "Carpio120895"; 
 		
 		String host = "smtp.gmail.com";
 		
@@ -57,5 +57,5 @@ public class MailSpaceTravels {
 		}
 		
 	}
-
+	
 }

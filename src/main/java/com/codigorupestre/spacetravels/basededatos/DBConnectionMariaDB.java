@@ -5,15 +5,15 @@ import java.sql.DriverManager;
 
 public class DBConnectionMariaDB {
 
-	static String db = "cursojava";
+	static String db = "space_travels";
 
 	static String user = "root";
 
-	static String password = "root";
+	static String password = "";
 
 	static String host = "localhost";
 
-	static String port = "33306";
+	static String port = "3306";
 
 	static String url = "jdbc:mysql://" + host + ":" + port + "/" + db;
 

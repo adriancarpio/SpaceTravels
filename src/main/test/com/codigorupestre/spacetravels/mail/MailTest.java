@@ -10,4 +10,4 @@ public class MailTest {
 		mail.sendMail("macarpio@est.itsgg.edu.ec");
 	}
 
-}
+} 
