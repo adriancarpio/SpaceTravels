@@ -16,10 +16,10 @@ public class MailSpaceTravels {
 	public void sendMail(String emailTo) {
 		
 		//quien va  a enviar el correo
-		String from = "adriancarpiomoran@gmail.com";
+		String from = "";
 		
-		String userName = "adriancarpiomoran@gmail.com";
-		String password = "Carpio120895"; 
+		String userName = "";
+		String password = ""; 
 		
 		String host = "smtp.gmail.com";
 		
